@@ -1,0 +1,16 @@
+<f:be.container
+    pageTitle="four_out"
+    addCssFile="{f:uri.resource(path:'styles/backend.css')}"
+>
+
+<f:render partial="Stepbar" arguments="{newsItem: activeStep}"/>
+
+<h1>
+    <f:render section="pageTitle" />
+</h1>
+
+<p>
+    <f:render section="pageContent" />
+</p>
+
+</f:be.container>

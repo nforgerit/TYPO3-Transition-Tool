@@ -62,7 +62,7 @@ define('TYPO3_MOD_PATH', '../typo3conf/ext/four_out/mod1/');
 $BACK_PATH='../../../typo3/'; 
 $MCONF["name"]="tools_txfourout";
 $MCONF["access"]="admin"; 
-$MCONF["script"]="index.php"; 
+$MCONF["script"]="someWhereElse/mod1/index.php"; 
 $MLANG["default"]["tabs_images"]["tab"] = "moduleicon.gif"; 
 $MLANG["default"]["ll_ref"]="LLL:EXT:four_out/mod1/locallang_mod.php"; 
 ?>

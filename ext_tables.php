@@ -22,12 +22,19 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
-/* Simply registering backend modules the TYPO3 way */
-global $TBE_MODULES;                         
-
-if (TYPO3_MODE === 'BE')	{ 	    
-	t3lib_extMgm::addModulePath('tools_txfouroutM1', t3lib_extMgm::extPath($_EXTKEY) . 'mod1/');
-	t3lib_extMgm::addModule('tools','txfouroutM1','',t3lib_extMgm::extPath($_EXTKEY).'mod1/');
-}                  
-
-?>
+if (TYPO3_MODE === 'BE') {    
+Tx_Extbase_Utility_Extension::registerModule(
+    $_EXTKEY,
+    'tools',
+    'tx_fourout_mod1',
+    '',
+    array(
+        'Index' => 'index, step1, step2, step3',
+    ),
+    array(
+        'access' => 'user,group',
+        'icon' => 'EXT:four_out/ext_icon.png', 
+		'labels' => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_mod.xml',
+    )
+);
+}

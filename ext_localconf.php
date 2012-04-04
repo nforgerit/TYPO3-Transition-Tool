@@ -23,6 +23,15 @@
 ***************************************************************/
 
 /* This line is essential for the Webservice's export functionalities which use TYPO3's eID mechanism */
-$GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include'][$_EXTKEY] = "EXT:{$_EXTKEY}/pi1/index.php";    
+//$GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include'][$_EXTKEY] = "EXT:{$_EXTKEY}/pi1/index.php";    
                                
-?>
+
+if (!defined ('TYPO3_MODE')) die ('Access denied.');
+
+Tx_Extbase_Utility_Extension::configurePlugin(
+	$_EXTKEY,
+	'Pi1',
+	array(
+		'Index' => 'index',
+	)
+);

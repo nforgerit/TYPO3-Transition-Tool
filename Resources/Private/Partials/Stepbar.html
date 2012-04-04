@@ -1,0 +1,25 @@
+<div id="stepbar">
+
+    <div class="steps">
+        <div class="step">
+            <f:link.action action="step1">
+                <div class="count <f:if condition="{step1} == 'true'"><f:then>inverted</f:then></f:if>">1</div>    
+            </f:link.action>
+            <div class="description <f:if condition='step1'><f:then>active</f:then></f:if>">prepare your data</div>
+        </div>
+
+        <div class="step">
+            <f:link.action action="step2">
+                <div class="count <f:if condition="{step2} == 'true'"><f:then>inverted</f:then></f:if>">2</div>
+            </f:link.action>
+            <div class="description <f:if condition='step2'><f:then>active</f:then></f:if>">transform your data</div>
+        </div>
+
+        <div class="step">
+            <f:link.action action="step3">
+                <div class="count <f:if condition="{step3} == 'true'"><f:then>inverted</f:then></f:if>">3</div>
+            </f:link.action>
+            <div class="description <f:if condition='step3'><f:then>active</f:then></f:if>">export your data</div>
+        </div>
+    </div>
+</div>

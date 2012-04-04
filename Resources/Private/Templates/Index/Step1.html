@@ -1,0 +1,23 @@
+<f:layout name="Backend/Default" />
+
+<f:section name="pageTitle">Prepare your Data</f:section>
+
+<f:section name="pageContent">
+<p>
+    {headline}
+</p>
+    
+<f:if condition="{message}">
+    <f:then>
+    <p style="border: 1px solid {color};">
+        {message}
+    </p>
+    <pre>data: {data}</pre>
+    </f:then>
+    <f:else>
+    <form action="" method="POST">
+        <input type="submit" name="generateData" value="Generate"/>
+    </form>
+    </f:else>
+</f:if>
+</f:section> 

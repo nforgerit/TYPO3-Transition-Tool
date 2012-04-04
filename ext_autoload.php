@@ -26,9 +26,11 @@
  * Register necessary class names with autoloader
  *
  */
-$extensionPath = t3lib_extMgm::extPath('four_out');
-return array(
-	'Tx_FourOut_ExportDataProvider' => $extensionPath . 'Classes/ExportDataProvider.php',
-	'Tx_FourOut_XSLTProcessor' => $extensionPath . 'Classes/XSLTProcessor.php',
-);           
+//$extensionPath = t3lib_extMgm::extPath('four_out');
+// return array(
+//  'Tx_FourOut_ExportDataProvider' => $extensionPath . 'Classes/ExportDataProvider.php',
+//  'Tx_FourOut_XSLTProcessor' => $extensionPath . 'Classes/XSLTProcessor.php',
+// );     
+
+return array();      
 ?>

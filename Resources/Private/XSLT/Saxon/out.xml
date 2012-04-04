@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+   <site identifier="" nodeName="home">
+      <properties>
+         <name>TheSiteName</name>
+         <state>2</state>
+         <siteResourcesPackageKey>TYPO3.PhoenixDemoTypo3Org</siteResourcesPackageKey>
+      </properties>
+      <node identifier=""
+            type="TYPO3.TYPO3:Page"
+            nodeName="homepage"
+            locale="en_EN">
+         <properties>
+            <title/>
+         </properties>
+         <node identifier=""
+               type="TYPO3.TYPO3:Page"
+               nodeName=""
+               locale="en_EN"/>
+         <node identifier=""
+               type="TYPO3.TYPO3:Page"
+               nodeName=""
+               locale="en_EN"/>
+         <node identifier=""
+               type="TYPO3.TYPO3:Page"
+               nodeName=""
+               locale="en_EN"/>
+         <node identifier=""
+               type="TYPO3.TYPO3:Page"
+               nodeName=""
+               locale="en_EN"/>
+         <node identifier=""
+               type="TYPO3.TYPO3:Page"
+               nodeName=""
+               locale="en_EN"/>
+      </node>
+   </site>
+</root>

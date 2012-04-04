@@ -40,6 +40,10 @@ The data translation uses T3v4's XML export and translates it into v5 compatible
 	- *** processing XSLTProcessor *** 
 	- php-hook: after-processing: last chance to change the output!
 
+## Misc. Points
+- asynchronous export (huge data amounts will result in a dying request!)
+- seek fileadmin content, too
+
 ## Legal Notice
 /***************************************************************
 *  Copyright notice
