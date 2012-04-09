@@ -22,7 +22,8 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
-class Tx_FourOut_Domain_Service_ExportDataProvider {  
+class Tx_Zeitenwende_Domain_Service_ExportDataProvider {  
+
 	  
 	/**
 	 * @var String (XML) This variable contains the XML data being transformed by this class.
@@ -51,7 +52,21 @@ class Tx_FourOut_Domain_Service_ExportDataProvider {
 	 * @param String $phpHooksPath Sets the path of the file containing the PHP-Hooks which may alter the transformation process
 	 * @throws Generic Exception
 	 */
-	public function __construct($inpFilepath = '', $xsltStylesheetsPath = '', $phpHooksPath = '', $logPath = '') {    
+	public function __construct() {    
+       		       
+            /*
+                fetch values from ext_conf_template.txt
+                - dataFilePath
+                - xsltStylesheetsPath
+                - phpHooksPath
+                - logPath
+            */
+
+        // to be removed later on
+        $inpFilepath = dirname(__FILE__).'/../../../Resources/Private/Data/Input.xml'; 
+        $xsltStylesheetsPath = dirname(__FILE__).'/../../../Resources/Private/XSLT/Stylesheets/'; 
+        $phpHooksPath = dirname(__FILE__).'/../../../Resources/Private/PHP/Transition/'; 
+        $logPath = dirname(__FILE__).'/../../../Resources/Private/XSLT/Log/XsltProcessor.txt'; 
        		       
 		if ($inpFilepath == '') {     	
 			throw new Exception("No Inputfile given.");
@@ -77,16 +92,28 @@ class Tx_FourOut_Domain_Service_ExportDataProvider {
 		    $this->_profilerLogPath = $logPath;
 	    }
 	}       
-	
+	/**
+	 * @param $params Array
+	 */
+	public function setRequestParams($params) {
+	    $this->_params = $params;
+	}
      
 	/** 
 	 * This classes method of "main purpose"
+	 * @param Array phpPreTransformationHooks   array('funcname1','funcname2','funcname3',...), (i.e. array() means all)
+     * @param Array xsltTransformationTemplates array('tplname1', 'tplname2', ...), (see above)
+     * @param Array phpPostTransformationHooks  array('funcname1','funcname2','funcname3',...) (see above)
 	 * @access public
 	 */
-	public function transform() {
-		$this->_processPreTransformation();
-		$this->_processXsltTransformation();		
-		$this->_processPostTransformation();
+	public function transform(
+	    $phpPreTransformationHooks = array(), 
+	    $xsltTransformationTemplates = array(), 
+	    $phpPostTransformationHooks = array()
+    ) {
+		$this->_processPreTransformation($phpPreTransformationHooks);
+		$this->_processXsltTransformation($xsltTransformationTemplates);		
+		$this->_processPostTransformation($phpPostTransformationHooks);
 	}          
 	
 	/**
@@ -129,8 +156,8 @@ class Tx_FourOut_Domain_Service_ExportDataProvider {
 	 */
 	protected function _processXsltTransformation() {
 		/* THIS IS THE SWEET SPOT */               
-		require_once t3lib_extMgm::extPath('four_out').'Classes/Domain/Service/XsltProcessor.php';
-		$xsltProcessor = t3lib_div::makeInstance('Tx_FourOut_Domain_Service_XsltProcessor');    
+		require_once t3lib_extMgm::extPath('zeitenwende').'Classes/Domain/Service/XsltProcessor.php';
+		$xsltProcessor = t3lib_div::makeInstance('Tx_Zeitenwende_Domain_Service_XsltProcessor');    
 
         $stylesheetDOM = new DOMDocument;   
         $ret = $stylesheetDOM->loadXML($this->_xsltMasterStylesheet);

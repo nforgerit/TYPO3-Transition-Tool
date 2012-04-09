@@ -22,7 +22,7 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
-class Tx_FourOut_Domain_Model_PackageGenerator {
+class Tx_Zeitenwende_Domain_Model_PackageGenerator {
 	
 	/**
 	 * The to be exported Phoenix SitePackage' name

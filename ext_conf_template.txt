@@ -1,0 +1,4 @@
+# cat=CATEGORY/SUBCATEGORY/SORT; type=VAR_TYPE; label=HEADER:DESCRIPTION
+2	var = DEFAULT
+
+// see @http://mediavrog.net/blog/2007/05/28/typo3/extensions/backend-be-extension-konfiguration-von-konstanten-direkt-nach-installation-moglich-machen/

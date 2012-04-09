@@ -1,0 +1,3 @@
+<?php
+
+class Tx_Zeitenwende_Domain_Service_SaxonXsltProcessor extends Tx_Zeitenwende_Domain_Service_AbstractXsltProcessor {}

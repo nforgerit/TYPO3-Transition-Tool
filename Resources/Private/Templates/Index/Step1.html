@@ -9,15 +9,18 @@
     
 <f:if condition="{message}">
     <f:then>
-    <p style="border: 1px solid {color};">
-        {message}
-    </p>
+    <f:for each="{message}" as="content" key="number">
+        <li>{number}: {content}</li>
+    </f:for>
     <pre>data: {data}</pre>
     </f:then>
-    <f:else>
-    <form action="" method="POST">
-        <input type="submit" name="generateData" value="Generate"/>
-    </form>
-    </f:else>
 </f:if>
+
+    <f:form controller="Index" action="step1" method="POST" enctype="multipart/form-data">
+        <f:form.textfield name="initNode" property="dataPreparation[]" value="0" /> <br>
+        <f:form.textfield name="dataFileName" property="dataPreparation[]" value="Input.xml" /> <br>
+        <f:form.select name="involvedTables" property="dataPreparation[]" options="{pages: 'pages', tt_content: 'tt_content'}" multiple="true" /> <br>
+        <f:form.submit name="generateData" property="dataPreparation[]" value="Generate" /> <br>
+    </f:form>
+
 </f:section> 

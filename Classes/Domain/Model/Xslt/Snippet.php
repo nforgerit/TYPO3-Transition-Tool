@@ -1,4 +1,4 @@
-<?php                                    
+<?php
 /***************************************************************
 *  Copyright notice
 *
@@ -21,20 +21,37 @@
 *
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
-
-if (TYPO3_MODE === 'BE') {    
-Tx_Extbase_Utility_Extension::registerModule(
-    $_EXTKEY,
-    'tools',
-    'tx_zeitenwende_mod1',
-    '',
-    array(
-        'Index' => 'index, step1, step2, step3',
-    ),
-    array(
-        'access' => 'user,group',
-        'icon' => 'EXT:'. $_EXTKEY .'/ext_icon.png', 
-		'labels' => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_mod.xml',
-    )
-);
+class Tx_Zeitenwende_Domain_Model_Xslt_Snippet {
+	
+	/**
+	 * The XSLT snippet's filename
+	 */
+	protected $_filename = '';
+	
+	/**
+	 * The XSLT snippet's content
+	 */
+	protected $_content = ''; 
+	
+	/**
+	 * @param String (FILENAME) $filename
+	 */
+	public function __construct(string $filename) {
+        if (! file_exists($filename)) {
+            throw new Tx_Zeitenwende_Domain_Model_Exception_InvalidParamsException("Given Snippetfile ".$filename." does not exist.");
+        }
+        $this->_filename = $filename;
+	}                             
+	
+	/**
+	 * @return String (XSLT) Returns the snippet's contents
+	 */
+	public function getContent() {
+	    if (file_exists($filename)) {
+			$this->_content = file_get_contents($filename);
+			return $this->_content;
+		}
+	}
 }
+
+?>

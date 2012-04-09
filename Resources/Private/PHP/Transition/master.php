@@ -42,12 +42,6 @@ return array(
 			return $lines;
 		},
 		"unescapeHtmlSpecialCharsOfFlexformValues" => function($lines) {
-		    foreach ($lines as $i => $l) {
-		        if (preg_match('/index=\"tx_templavoila_flex\"/', $l, $matches) > 0) {
-		            die("matched flex field!");
-		            echo "flex value in line {$i}: ".${1}."\n";
-		        }
-		    }
 		},
 	),
 	"post"	=> array(
