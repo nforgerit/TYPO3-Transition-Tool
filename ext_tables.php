@@ -26,10 +26,10 @@ if (TYPO3_MODE === 'BE') {
 Tx_Extbase_Utility_Extension::registerModule(
     $_EXTKEY,
     'tools',
-    'tx_zeitenwende_mod1',
+    'tx_t3tt_mod1',
     '',
     array(
-        'Index' => 'index, step1, step2, step3',
+        'Index' => 'index, step1, step2, step3, downloadOutputFile',
     ),
     array(
         'access' => 'user,group',

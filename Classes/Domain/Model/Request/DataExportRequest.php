@@ -1,6 +1,6 @@
 <?php
 
-class Tx_Zeitenwende_Domain_Model_Request_DataExportRequest {
+class Tx_T3tt_Domain_Model_Request_DataExportRequest {
     
     protected $_paramsInserted = FALSE;
     
@@ -17,14 +17,14 @@ class Tx_Zeitenwende_Domain_Model_Request_DataExportRequest {
     
     public function getTables() {
         if (! $this->_paramsInserted) {
-            throw new Tx_Zeitenwende_Domain_Model_Exception_NoParamsException("Use insertParams() before fetching the tables.");
+            throw new Tx_T3tt_Domain_Model_Exception_NoParamsException("Use insertParams() before fetching the tables.");
         }
         return (array) $this->_params['involvedTables'];
     }
     
     public function getOutputFile() {
         if (! $this->_paramsInserted) {
-            throw new Tx_Zeitenwende_Domain_Model_Exception_NoParamsException("Use insertParams() before fetching the outputFile.");
+            throw new Tx_T3tt_Domain_Model_Exception_NoParamsException("Use insertParams() before fetching the outputFile.");
         }
         
         return (string) $this->_params['dataFileName'];
@@ -32,7 +32,7 @@ class Tx_Zeitenwende_Domain_Model_Request_DataExportRequest {
     
     public function getInitNode() {
         if (! $this->_paramsInserted) {
-            throw new Tx_Zeitenwende_Domain_Model_Exception_NoParamsException("Use insertParams() before fetching the initNode.");
+            throw new Tx_T3tt_Domain_Model_Exception_NoParamsException("Use insertParams() before fetching the initNode.");
         }
 
         return (int) $this->_params['initNode'];

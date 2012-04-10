@@ -1,9 +1,11 @@
 <f:be.container
-    pageTitle="zeitenwende"
+    pageTitle="TYPO3 Transition Tool"
     addCssFile="{f:uri.resource(path:'styles/backend.css')}"
 >
 
 <f:render partial="Stepbar" arguments="{newsItem: activeStep}"/>
+<f:renderFlashMessages class="messageContainer"/>
+
 
 <h1>
     <f:render section="pageTitle" />

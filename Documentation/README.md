@@ -1,22 +1,22 @@
 # TYPO3 Transition Toolchain (Pt1): Four Out!         
 
 ## Foreword: Current Status
-This extension is still highly experimental since it needs a lot of refurbishment concerning its GUI, its source structurization as well as its core: The data transition via XSLT. However, it proves the possibility of the initial idea of transitioning from TYPO3v4 instances to TYPO3v5 (Phoenix) instances via XSLT. After a lot of refactorization and maturization, this extension could be a cold-kickstarter for a whole transition toolchain (maybe covering TS, (Extbase-)PHP-Code, Users, etc.). Alas, by now the future content definitions of Phoenix are not ready such that the extension needs a lot of future development effort. By now, it will be mainly hosted on github (//github.com/crusoe/T3TT/zeitenwende.git) and will at last be hosted at TER when it's at least some certain (to be defined) state of feature-complete.
+This extension is still highly experimental since it needs a lot of refurbishment concerning its GUI, its source structurization as well as its core: The data transition via XSLT. However, it proves the possibility of the initial idea of transitioning from TYPO3v4 instances to TYPO3v5 (Phoenix) instances via XSLT. After a lot of refactorization and maturization, this extension could be a cold-kickstarter for a whole transition toolchain (maybe covering TS, (Extbase-)PHP-Code, Users, etc.). Alas, by now the future content definitions of Phoenix are not ready such that the extension needs a lot of future development effort. By now, it will be mainly hosted on github (//github.com/crusoe/T3TT/T3tt.git) and will at last be hosted at TER when it's at least some certain (to be defined) state of feature-complete.
 
 ## Abstract
 This TYPO3 v4 (T3v4) Extension is called "Four Out!" and is part of the transition toolchain which will ease the transition for users of T3v4 to the brandnew and technically incompatible TYPO3 v5 (T3v5, Codename: Phoenix). It will provide either a simple Webservice API for exporting data from your v4 instance to v5 (which then itself needs the toolchain's Pt2 called "Five In!" for import functionalities) or it may alternatively generate v5 compatible packages that then can simply be thrown into your v5 directory.                           
 
-The data translation uses T3v4's XML export and translates it into v5 compatible XML data via XSLT. It can be highly customized by simply throwing appropriate XSLT snippets into the EXT:zeitenwende/Resources/Private/XSLT/Stylesheets folder which are automatically read, assembled and executed. Furthermore, the whole translation process can be customized via several PHP-hooks that can gain control at almost any stage.
+The data translation uses T3v4's XML export and translates it into v5 compatible XML data via XSLT. It can be highly customized by simply throwing appropriate XSLT snippets into the EXT:T3tt/Resources/Private/XSLT/Stylesheets folder which are automatically read, assembled and executed. Furthermore, the whole translation process can be customized via several PHP-hooks that can gain control at almost any stage.
 
 ## Installation                  
 - enable .htaccess for mod_rewrite (this is urgent!)
-- install the v4 extension "zeitenwende" from TYPO3 Extension Repository (TER) [you've probably already done that]
+- install the v4 extension "T3tt" from TYPO3 Extension Repository (TER) [you've probably already done that]
 
 ## Quick Guide      
 - log into your T3v4 backend
 - seek and click on the "Four Out!" module in your T3v4 backend
 - ...     
-- currently all .xml files in EXT:zeitenwende/Resources/Public are automatically bound to http://<your_t3_host>/rest/<filename_wo_ending>      
+- currently all .xml files in EXT:T3tt/Resources/Public are automatically bound to http://<your_t3_host>/rest/<filename_wo_ending>      
 - newly generated export paths can then simply be saved as files holding the content in the public folder from above  
           
 ## Contents
@@ -25,8 +25,8 @@ The data translation uses T3v4's XML export and translates it into v5 compatible
 
 ## Further Documentation                                      
 - extending "Four Out!"
-	- provide xslt-snippets for EXT:zeitenwende/Resources/Private/XSLT/Stylesheets
-	- customize Tx_Zeitenwende_ExportDataProvider to fulfill your needs
+	- provide xslt-snippets for EXT:T3tt/Resources/Private/XSLT/Stylesheets
+	- customize Tx_T3tt_ExportDataProvider to fulfill your needs
 	- hook into the translation process via your own PHP Script
 	- see "Crunching `Four Out!' - Advanced techniques for Customization"
 - refer to "T3TT in-depth study"   

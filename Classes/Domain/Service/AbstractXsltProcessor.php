@@ -1,10 +1,10 @@
 <?php
 
-abstract class Tx_Zeitenwende_Domain_Service_AbstractXsltProcessor {
+abstract class Tx_T3tt_Domain_Service_AbstractXsltProcessor {
     
-    protected public function injectData() {}
+    public function injectData() {}
     
-    protected public function injectStylesheet() {}
+    public function injectStylesheet() {}
     
-    protected public function exec() {}
+    public function exec() {}
 }

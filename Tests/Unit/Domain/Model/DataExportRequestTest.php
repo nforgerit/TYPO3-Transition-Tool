@@ -1,11 +1,11 @@
 <?php
 
-class Tx_Zeitenwende_Domain_Model_DataExportRequestTest extends Tx_Extbase_Tests_Unit_BaseTestCase {
+class Tx_T3tt_Domain_Model_DataExportRequestTest extends Tx_Extbase_Tests_Unit_BaseTestCase {
 
     protected $_exportRequestMock = NULL;
 
     public function setUp() {
-        $this->_exportRequestMock = new Tx_Zeitenwende_Domain_Model_DataExportRequest;
+        $this->_exportRequestMock = new Tx_T3tt_Domain_Model_DataExportRequest;
     }
         
     /**
@@ -29,7 +29,7 @@ class Tx_Zeitenwende_Domain_Model_DataExportRequestTest extends Tx_Extbase_Tests
     
     /**
      * @test
-     * @expectedException Tx_Zeitenwende_Domain_Model_Exception_NoParamsException
+     * @expectedException Tx_T3tt_Domain_Model_Exception_NoParamsException
      */
     public function throwExceptionOnForgottenInjectedRequestData() {
         $this->_exportRequestMock->getTables();

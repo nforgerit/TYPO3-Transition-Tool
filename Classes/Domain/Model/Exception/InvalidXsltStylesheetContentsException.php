@@ -1,3 +1,3 @@
 <?php
 
-class Tx_Zeitenwende_Domain_Model_Exception_InvalidXsltStylesheetContentsException extends Exception {}
+class Tx_T3tt_Domain_Model_Exception_InvalidXsltStylesheetContentsException extends Exception {}

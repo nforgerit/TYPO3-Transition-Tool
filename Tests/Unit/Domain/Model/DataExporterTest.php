@@ -1,6 +1,6 @@
 <?php
 
-class Tx_Zeitenwende_Domain_Model_DataExporterTest extends Tx_Extbase_Tests_Unit_BaseTestCase {
+class Tx_T3tt_Domain_Model_DataExporterTest extends Tx_Extbase_Tests_Unit_BaseTestCase {
     
     protected $_dataExporterMock = NULL;
     
@@ -9,8 +9,8 @@ class Tx_Zeitenwende_Domain_Model_DataExporterTest extends Tx_Extbase_Tests_Unit
     protected $_requestParams = array();
     
     public function setUp() {
-        $this->_dataExporterMock = new Tx_Zeitenwende_Domain_Model_DataExporter;
-        $this->_exportRequestMock = new Tx_Zeitenwende_Domain_Model_DataExportRequest;
+        $this->_dataExporterMock = new Tx_T3tt_Domain_Model_DataExporter;
+        $this->_exportRequestMock = new Tx_T3tt_Domain_Model_DataExportRequest;
         
         $this->_requestParams['valid'] = array('tables' => array('tt_content', 'pages'), 'initNode' => 0, 'outputFile' => 'dataSources.xml');
         $this->_requestParams['missingTables'] = array('initNode' => 0, 'outputFile' => 'dataSources.xml');

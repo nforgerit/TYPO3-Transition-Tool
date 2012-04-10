@@ -2,13 +2,13 @@
 <T3locallang>
 	<meta type="array">
 		<type>module</type>
-		<description>Language labels for BE administration module of ext:zeitenwende</description>
+		<description>Language labels for BE administration module of ext:t3tt</description>
 	</meta>
 	<data type="array">
 		<languageKey index="default" type="array">
-			<label index="mlang_tabs_tab">Zeitenwende</label>
-			<label index="mlang_labels_tablabel">ZW Administration</label>
-			<label index="mlang_labels_tabdescr">manage your Phoenix-transition</label>
+			<label index="mlang_tabs_tab">T3 Transition Tool</label>
+			<label index="mlang_labels_tablabel">T3TT Administration</label>
+			<label index="mlang_labels_tabdescr">manage your data transition!</label>
 		</languageKey>
 	</data>
 </T3locallang>

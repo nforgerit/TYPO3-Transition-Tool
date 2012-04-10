@@ -26,10 +26,10 @@
  * Register necessary class names with autoloader
  *
  */
-//$extensionPath = t3lib_extMgm::extPath('zeitenwende');
+//$extensionPath = t3lib_extMgm::extPath('t3tt');
 // return array(
-//  'Tx_Zeitenwende_ExportDataProvider' => $extensionPath . 'Classes/ExportDataProvider.php',
-//  'Tx_Zeitenwende_XSLTProcessor' => $extensionPath . 'Classes/XSLTProcessor.php',
+//  'Tx_T3tt_ExportDataProvider' => $extensionPath . 'Classes/ExportDataProvider.php',
+//  'Tx_T3tt_XSLTProcessor' => $extensionPath . 'Classes/XSLTProcessor.php',
 // );     
 
 return array();      

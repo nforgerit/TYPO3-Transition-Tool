@@ -1,6 +1,6 @@
 <?php
 
-class Tx_Zeitenwende_Domain_Service_PhpXsltProcessor extends Tx_Zeitenwende_Domain_Service_AbstractXsltProcessor {
+class Tx_T3tt_Domain_Service_PhpXsltProcessor extends Tx_T3tt_Domain_Service_AbstractXsltProcessor {
 
     	/**
     	 * The input data feeded to the XSLT processor
@@ -27,8 +27,9 @@ class Tx_Zeitenwende_Domain_Service_PhpXsltProcessor extends Tx_Zeitenwende_Doma
     	 * @param DOMDocument $inp The input data injected into the XSLTProcessor service class
     	 * @access public
     	 */
-    	public function injectInputData(DOMDocument $inp) {
+    	public function setInputData(DOMDocument $inp) {
     		$this->_inputData = $inp;
+    		return $this;
     	}                                                      
 
     	/**
@@ -36,12 +37,14 @@ class Tx_Zeitenwende_Domain_Service_PhpXsltProcessor extends Tx_Zeitenwende_Doma
     	 * @param DOMDocument $xsls The stylesheet data injected into the XSLTProcessor service class
     	 * @access public
     	 */	
-    	public function injectStylesheet(DOMDocument $xsls) {
+    	public function setStylesheet(DOMDocument $xsls) {
     		$this->_styleSheet = $xsls;
+    		return $this;
     	}
 
     	public function setProfiler($logPath) {
     	    $this->_profilerLogPath = $logPath;
+    	    return $this;
     	}
 
     	/**

@@ -1,5 +1,5 @@
 <?php 
-class Tx_Zeitenwende_Controller_TransformationStepsControllerTest extends Tx_Extbase_Tests_Unit_BaseTestCase {
+class Tx_T3tt_Controller_TransformationStepsControllerTest extends Tx_Extbase_Tests_Unit_BaseTestCase {
     
     public function step1ActionGeneratesGenericDataFileOnZeroInput() {
         

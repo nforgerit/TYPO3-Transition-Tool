@@ -1,6 +1,6 @@
 <?php
 
-class Tx_Zeitenwende_Domain_Model_Data_Exporter {
+class Tx_T3tt_Domain_Model_Data_Exporter {
 
     protected $_exportRequest = NULL;
     
@@ -8,7 +8,7 @@ class Tx_Zeitenwende_Domain_Model_Data_Exporter {
     
     protected $_exportData = NULL;
 
-    public function injectRequest(Tx_Zeitenwende_Domain_Model_Request_DataExportRequest $exportRequest) {
+    public function setRequest(Tx_T3tt_Domain_Model_Request_DataExportRequest $exportRequest) {
         $this->_exportRequest = $exportRequest;
         return $this;
     }
@@ -31,10 +31,14 @@ class Tx_Zeitenwende_Domain_Model_Data_Exporter {
     }
     
     public function writeDataToOutputFile() {
-        if (file_put_contents($this->_exportRequest->getOutputFile(), $this->getData() > 0)) {
+        $outputFile = t3lib_extMgm::extPath('t3tt').'Resources/Private/Data/'.$this->_exportRequest->getOutputFile();
+        $returnValue = file_put_contents($outputFile, $this->getData());
+        
+        if ($returnValue > 0) {
             return true;
+        } else {
+            return false;
         }
-        return false;
     }
     
     private function instantiateTxImpexp() {

@@ -30,7 +30,7 @@ return array(
      * XSLT v1-readable replacement like "index='tt_content' id='42'".
      */
 	"pre"	=> array(
-		"killIndexColons"	=> function($lines) {
+		"killIndexColons"	=> function($lines) {		    
 			foreach ($lines as $i => $l) {
 				$lines[$i] = preg_replace(
 					'/index=\"(\w+):(\d+)\"/',
@@ -38,11 +38,11 @@ return array(
 					$l
 				);
 			}
-			
+
 			return $lines;
 		},
-		"unescapeHtmlSpecialCharsOfFlexformValues" => function($lines) {
-		},
+		/*"unescapeHtmlSpecialCharsOfFlexformValues" => function($lines) {
+		},*/
 	),
 	"post"	=> array(
 	    /**
@@ -50,12 +50,12 @@ return array(
 	     * as ' ' (any whitespaces), replace any occurrences with a dash (-).
 	     */
 	   	"normalizeNodeNames" => function($lines) {
-		    foreach ($lines as $i => $l) {
+		    foreach ($lines as $i => $l) {    
 		        
                     // just process the value within the nodeName (thus a somewhat more sophisticated approach is needed)
                     // ('U' = ungreedy matching, otherwise PCRE would match nodeName="{someVal" title="}")
                 if (preg_match('/nodeName=\"(.*)\"/U', $l, $matches) > 0) {
-                    $nodeNameValue = $matches[1];
+                    $nodeNameValue = $matches[1];    		        
 
                         // kill whitespaces
                     $filteredSubStr = str_replace(
@@ -65,20 +65,36 @@ return array(
                     );
                     
                         // replace illegal symbols with a dash
-                    $filteredSubStr = str_replace(array('#','@', '*'), '-', $filteredSubStr);
+                    $filteredSubStr = str_replace(array('#','@','*',',','.','!'), '-', $filteredSubStr);
                         
                         // replace original nodeName content with filtered content
                     $l = preg_replace(
                         '/nodeName=\"(.*)\"/U',
                         'nodeName="'.$filteredSubStr.'"',
                         $l
-                    );
+                    );                
                 }
-                                            
+                                                            
                 $lines[$i] = $l;
             }
+            echo "-- ".htmlspecialchars($returnArr)." "."\n";
+	   	    
             
             return $lines;
+		},
+		"fillEmptyNodeNames" => function($lines) {
+		    foreach ($lines as $i => $l) {
+		        $lines[$i] = preg_replace(
+		            '/nodeName=\"\"/U', 
+		            'nodeName="'.substr(hash('sha256', (string)mt_rand()), 0, 20).'"',
+		            $l
+		        );
+		    }
+		    
+		    return $lines;
+		},
+		"killRemainingMarkers" => function($lines) {
+		    
 		},
 	),
 );

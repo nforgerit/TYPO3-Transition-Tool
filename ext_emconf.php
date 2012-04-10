@@ -23,7 +23,7 @@
 ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = array(
-	'title' => 'Zeitenwende',
+	'title' => 'TYPO3 Transition Tool',
 	'description' => 'TYPO3 Transition Utility that 1) provides a translation engine for v4=>v5 content translations, 2) a Webservice exporting the TYPO3v5-conforming data and 3) a package generator for packages that can simply thrown into your TYPO3v5 content folder.',
 	'category' => 'module',
 	'shy' => 0,
@@ -46,8 +46,8 @@ $EM_CONF[$_EXTKEY] = array(
 	'CGLcompliance_note' => '',
 	'constraints' => array(
 		'depends' => array(
-			'php' => '5.2.0-0.0.0',
-			'typo3' => '4.2.0-0.0.0',
+			'php' => '5.3.0-0.0.0',
+			'typo3' => '4.5.0-0.0.0',
 		),
 		'conflicts' => array(
 		),
@@ -58,11 +58,11 @@ $EM_CONF[$_EXTKEY] = array(
 );               
 
 // DO NOT REMOVE OR CHANGE THESE 3 LINES:
-define('TYPO3_MOD_PATH', '../typo3conf/ext/zeitenwende/mod1/');
+define('TYPO3_MOD_PATH', '../typo3conf/ext/t3tt/mod1/');
 $BACK_PATH='../../../typo3/'; 
-$MCONF["name"]="tools_txzeitenwende";
+$MCONF["name"]="tools_txt3tt";
 $MCONF["access"]="admin"; 
 $MLANG["default"]["tabs_images"]["tab"] = "moduleicon.gif"; 
-//$MLANG["default"]["ll_ref"]="LLL:EXT:zeitenwende/mod1/locallang_mod.php"; 
+//$MLANG["default"]["ll_ref"]="LLL:EXT:t3tt/mod1/locallang_mod.php"; 
 ?>
 

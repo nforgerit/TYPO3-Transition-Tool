@@ -21,7 +21,7 @@
 *
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
-class Tx_Zeitenwende_Domain_Model_Xslt_Snippet {
+class Tx_T3tt_Domain_Model_Xslt_Snippet {
 	
 	/**
 	 * The XSLT snippet's filename
@@ -36,19 +36,20 @@ class Tx_Zeitenwende_Domain_Model_Xslt_Snippet {
 	/**
 	 * @param String (FILENAME) $filename
 	 */
-	public function __construct(string $filename) {
-        if (! file_exists($filename)) {
-            throw new Tx_Zeitenwende_Domain_Model_Exception_InvalidParamsException("Given Snippetfile ".$filename." does not exist.");
+	public function __construct($filename) {
+	    $filepath = t3lib_extMgm::extPath('t3tt').'Resources/Private/XSLT/Stylesheets/Snippets/';
+        if (! file_exists($filepath.$filename)) {
+            throw new Tx_T3tt_Domain_Model_Exception_InvalidParamsException("Given Snippetfile `".$filepath.$filename."' does not exist.");
         }
-        $this->_filename = $filename;
+        $this->_filename = $filepath.$filename;
 	}                             
 	
 	/**
 	 * @return String (XSLT) Returns the snippet's contents
 	 */
 	public function getContent() {
-	    if (file_exists($filename)) {
-			$this->_content = file_get_contents($filename);
+	    if (file_exists($this->_filename)) {
+			$this->_content = file_get_contents($this->_filename);
 			return $this->_content;
 		}
 	}

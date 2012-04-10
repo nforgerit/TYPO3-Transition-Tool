@@ -20,9 +20,9 @@
 	<root>
 		<site identifier="" nodeName="home">
 			<properties>
-				<name>TheSiteName</name>
+				<name><!-- ###SITE_NAME### --></name>
 				<state>2</state>
-                <siteResourcesPackageKey>TYPO3.PhoenixDemoTypo3Org</siteResourcesPackageKey>
+                <siteResourcesPackageKey><!-- ###PACKAGE_KEY### --></siteResourcesPackageKey>
 			</properties>
 
 			<!-- root node -->
@@ -78,51 +78,16 @@
             </xsl:element>
         </xsl:if>
         <!-- (end) page's/node's contents -->
-        
+    
+        <!-- (begin) recursively call <node> -->
+        <xsl:apply-templates select="node"/>    
+        <!-- (end) recursively call <node> -->
     </xsl:element>    
 </xsl:template>     
 
 <xsl:template name="tablerow">
     <xsl:choose>
-        <xsl:when test="fieldlist/field[@index='CType']/text() = 'text'">
-            <xsl:element name="node">
-                <xsl:attribute name="type">TYPO3.TYPO3:Text</xsl:attribute>
-                <xsl:attribute name="nodeName">
-                    <xsl:value-of select="fieldlist/field[@index='header']/text()"/>
-                </xsl:attribute>
-                <xsl:attribute name="locale">en_EN</xsl:attribute>
-
-                <xsl:element name="properties">
-                    <xsl:element name="headline">
-                        <xsl:value-of select="fieldlist/field[@index='header']/text()"/>
-                    </xsl:element>
-                    <xsl:element name="text">
-                        <xsl:value-of select="fieldlist/field[@index='bodytext']/text()"/>
-                    </xsl:element>
-                </xsl:element>
-            </xsl:element>
-        </xsl:when>
-        <xsl:when test="fieldlist/field[@index='CType']/text() = 'html'">
-            <xsl:element name="node">
-                <xsl:attribute name="identifier"></xsl:attribute>
-                <xsl:attribute name="type">TYPO3.TYPO3:Html</xsl:attribute>
-                <xsl:attribute name="nodeName">
-                    <xsl:value-of select="fieldlist/field[@index='header']/text()"/>
-                </xsl:attribute>
-                <xsl:attribute name="locale">en_EN</xsl:attribute>
-                
-                <xsl:element name="properties">
-                    <xsl:element name="source">
-                        <xsl:value-of select="fieldlist/field[@index='bodytext']/text()"/>
-                    </xsl:element>
-                </xsl:element>
-            </xsl:element>
-        </xsl:when>
-        <xsl:otherwise>
-            <xsl:message terminate="no">
-            damn! could not render tablerow #<xsl:value-of select="fieldlist/field[@index='uid']/text()"/>:( 
-            </xsl:message>
-        </xsl:otherwise>
+        ###SNIPPET_MARKER###
     </xsl:choose>
 </xsl:template>
 

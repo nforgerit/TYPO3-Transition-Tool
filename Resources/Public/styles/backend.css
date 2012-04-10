@@ -52,3 +52,11 @@
 h1 {
 	text-align: left;
 }
+
+.messageContainer {
+	width: 500px;
+	background-color: #FFF;
+	border: 1px solid #000;
+	padding: 20px;
+	
+}
