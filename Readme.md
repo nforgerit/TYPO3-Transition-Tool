@@ -3,7 +3,6 @@ This extension is in a really early state of development. However, the full work
 
 # Install
 
-1. Simply clone this repo into your <TYPO3-Instance>/typo3conf/ext
-`git clone https://github.com/crusoe/TYPO3-Transition-Tool.git t3tt`
+1. Simply clone this repo into your <TYPO3-Instance>/typo3conf/ext using `git clone https://github.com/crusoe/TYPO3-Transition-Tool.git t3tt`
 2. Use TYPO3s Extension Manager to install the `TYPO3 Transition Tool' Extension
 3. Have fun using it
