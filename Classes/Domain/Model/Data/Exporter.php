@@ -21,7 +21,10 @@ class Tx_T3tt_Domain_Model_Data_Exporter {
             $this->prepareRecordsFrom($tableName);
         }
         
-        $this->_exportData = $this->_txImpexpInstance->createXML();
+         $this->_exportData = mb_convert_encoding($this->_txImpexpInstance->createXML(), 'UTF-8');
+        //$this->_exportData = $this->_txImpexpInstance->createXML();
+        //$this->_exportData = mb_convert_encoding($this->_exportData, 'ISO-8859-1');
+        //die("encoding: ".mb_check_encoding($this->_exportData, 'UTF-8'));
         
         return $this;
     }

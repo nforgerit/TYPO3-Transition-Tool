@@ -6,9 +6,12 @@ class Tx_T3tt_Controller_IndexController extends Tx_Extbase_MVC_Controller_Actio
         
     public function initializeAction() {    
         $this->_args = $this->request->getArguments();
+        $this->fetchEmConfiguration();
     }
     
-    public function indexAction() {}
+    public function indexAction() {
+        $this->forward('step1');
+    }
 
 public function step1Action() {
         $this->flashMessageContainer->add("Hello there and welcome to `TYPO3 Transition Tool'" , 'Welcome', t3lib_FlashMessage::INFO);
@@ -51,10 +54,12 @@ public function step1Action() {
             $this->view->assign('data', $dataTransformator->getData());
         }
             
-        $this->view->assign('headline', 'This is where you would transform your data');
     }
     
     public function step3Action() {
+        $dstFolder = '<YOUR_FLOW3_ROOT>/Packages/Sites/TYPO3.$siteKey/Resources/Private/Content';
+        $this->flashMessageContainer->add("Alright, now put the Sites.xml into ".$dstFolder, ':)', t3lib_FlashMessage::INFO);
+        
         $target = t3lib_extMgm::extPath('t3tt').'Resources/Private/Data/Output.xml';
         $link = PATH_site.'/fileadmin/t3tt/Output.xml';
         symlink($target, $link);
@@ -66,9 +71,19 @@ public function step1Action() {
         $link = PATH_site.'/fileadmin/t3tt/Output.xml';
         
         header("Content-Type: application/force-download");
-        header("Content-Disposition: attachment; filename=\"Output.xml\"");        
+        header("Content-Disposition: attachment; filename=\"Sites.xml\"");        
         echo file_get_contents(readlink($link));
         die();
+    }
+    
+    private function fetchEmConfiguration() {
+        $extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['t3tt']);
+        $var1 = $this->extConf['name_der_variable'];
+        
+        $this->_args['EMCONF']['transformationInputDirectory'] = $extConf['Transformation_Input_Directory'];
+        $this->_args['EMCONF']['transformationInputFilename'] = $extConf['Transformation_Input_Filename'];
+        $this->_args['EMCONF']['transformationOutputDirectory'] = $extConf['Transformation_Output_Directory'];
+        $this->_args['EMCONF']['transformationOutputFilename'] = $extConf['Transformation_Output_Filename'];
     }
 
 }

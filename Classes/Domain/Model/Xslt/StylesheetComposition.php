@@ -28,7 +28,7 @@ class Tx_T3tt_Domain_Model_Xslt_StylesheetComposition {
         return $this;
     }
     
-    public function setCtypeConfiguration(Tx_T3tt_Domain_Model_CtypeConfiguration $configuration) {
+    public function setCtypeConfiguration(Tx_T3tt_Domain_Model_Xslt_CtypeConfiguration $configuration) {
         $this->_ctypeConfiguration = $configuration;
         return $this;
     }

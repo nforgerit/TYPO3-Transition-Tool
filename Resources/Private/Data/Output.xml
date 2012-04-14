@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 <root>
   <site identifier="" nodeName="home">
     <properties>
-      <name/>
+      <name>myFancyTypo3Page</name>
       <state>2</state>
-      <siteResourcesPackageKey/>
+      <siteResourcesPackageKey>TYPO3.PhoenixDemoTypo3Org</siteResourcesPackageKey>
     </properties>
     <node identifier="" type="TYPO3.TYPO3:Page" nodeName="homepage" locale="en_EN">
       <properties>
         <title/>
       </properties>
-      <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Another Testpage" locale="en_EN"/>
+      <node identifier="" type="TYPO3.TYPO3:Page" nodeName="AnotherTestpage" locale="en_EN"/>
       <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Startpunkt" locale="en_EN"/>
       <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Volleyball" locale="en_EN">
-        <node identifier="" type="TYPO3.TYPO3:Page" nodeName="" locale="en_EN">
+        <node identifier="" type="TYPO3.TYPO3:Page" nodeName="89293e5367eaeff98a57" locale="en_EN">
           <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Start" locale="en_EN">
             <node identifier="" type="TYPO3.TYPO3:Section" nodeName="Start-section" locale="en_EN">
               <properties>
@@ -31,13 +31,13 @@
                   <text><![CDATA[lorem ipsum]]></text>
                 </properties>
               </node>
-              <node type="TYPO3.TYPO3:Text" nodeName="Lorem ipsum" locale="en_EN">
+              <node type="TYPO3.TYPO3:Text" nodeName="Loremipsum" locale="en_EN">
                 <properties>
                   <headline>Lorem ipsum</headline>
                   <text><![CDATA[Lorem ipsum&nbsp;Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum]]></text>
                 </properties>
               </node>
-              <node identifier="" type="TYPO3.TYPO3:Html" nodeName="" locale="en_EN">
+              <node identifier="" type="TYPO3.TYPO3:Html" nodeName="3f4389ea3a1b1d21ffa2" locale="en_EN">
                 <properties>
                   <source><![CDATA[<h1>
   This is my fancy oodly headline.
@@ -45,7 +45,7 @@
                 </properties>
               </node>
             </node>
-            <node identifier="" type="TYPO3.TYPO3:Page" nodeName="" locale="en_EN">
+            <node identifier="" type="TYPO3.TYPO3:Page" nodeName="15dd3e7c62b2f099d0cc" locale="en_EN">
               <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Beach" locale="en_EN"/>
               <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Turniere" locale="en_EN"/>
               <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Termine" locale="en_EN"/>
@@ -55,7 +55,7 @@
                   <properties>
                     <title>Herren-section</title>
                   </properties>
-                  <node type="TYPO3.TYPO3:Text" nodeName="Nunc mi ante, nonummy et, fringilla at, tristique sed, elit" locale="en_EN">
+                  <node type="TYPO3.TYPO3:Text" nodeName="Nuncmiante-nonummyet-fringillaat-tristiquesed-elit" locale="en_EN">
                     <properties>
                       <headline>Nunc mi ante, nonummy et, fringilla at, tristique sed, elit</headline>
                       <text><![CDATA[Proin massa lorem, mollis eget, rutrum vitae, commodo id, risus. Proin mauris urna, convallis ut, aliquet non, interdum nec, magna. Proin neque enim, ornare ultrices, tempus nec, lobortis et, tellus. Proin nisl diam, gravida non, eleifend at, laoreet vitae, est. Proin orci diam, consequat at, elementum ac, pretium in, dolor. 
@@ -64,17 +64,17 @@ Quisque orci sapien, pretium placerat, sagittis ut, eleifend eu, sapien. Quisque
                     </properties>
                   </node>
                 </node>
-                <node identifier="" type="TYPO3.TYPO3:Page" nodeName="" locale="en_EN">
-                  <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Herren 1" locale="en_EN"/>
-                  <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Herren 2" locale="en_EN"/>
-                  <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Herren 3" locale="en_EN"/>
+                <node identifier="" type="TYPO3.TYPO3:Page" nodeName="724aac3c1bf379a90230" locale="en_EN">
+                  <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Herren1" locale="en_EN"/>
+                  <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Herren2" locale="en_EN"/>
+                  <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Herren3" locale="en_EN"/>
                 </node>
               </node>
               <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Damen" locale="en_EN">
-                <node identifier="" type="TYPO3.TYPO3:Page" nodeName="" locale="en_EN">
-                  <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Damen 1" locale="en_EN"/>
-                  <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Damen 2" locale="en_EN"/>
-                  <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Damen 3" locale="en_EN"/>
+                <node identifier="" type="TYPO3.TYPO3:Page" nodeName="7c5cbe3561e34345900e" locale="en_EN">
+                  <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Damen1" locale="en_EN"/>
+                  <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Damen2" locale="en_EN"/>
+                  <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Damen3" locale="en_EN"/>
                 </node>
               </node>
               <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Mixed" locale="en_EN">
@@ -82,14 +82,14 @@ Quisque orci sapien, pretium placerat, sagittis ut, eleifend eu, sapien. Quisque
                   <properties>
                     <title>Mixed-section</title>
                   </properties>
-                  <node type="TYPO3.TYPO3:Text" nodeName="Integer odio wisi, semper ut, luctus ac, aliquet vel, metus" locale="en_EN">
+                  <node type="TYPO3.TYPO3:Text" nodeName="Integerodiowisi-semperut-luctusac-aliquetvel-metus" locale="en_EN">
                     <properties>
                       <headline>Integer odio wisi, semper ut, luctus ac, aliquet vel, metus</headline>
                       <text><![CDATA[Sed enim dolor, molestie aliquet, faucibus vel, elementum posuere, felis. Sed faucibus, lacus eu interdum feugiat, wisi leo vulputate lectus, ut ullamcorper nisl nisl placerat tellus. Sed justo libero, blandit nec, eleifend vitae, adipiscing vel, orci. Sed libero tortor, luctus in, molestie id, ultrices at, nibh. Sed lorem tellus, rutrum sit amet, tristique eget, eleifend blandit, wisi. 
 ]]></text>
                     </properties>
                   </node>
-                  <node type="TYPO3.TYPO3:Text" nodeName="In nonummy odio non metus" locale="en_EN">
+                  <node type="TYPO3.TYPO3:Text" nodeName="Innonummyodiononmetus" locale="en_EN">
                     <properties>
                       <headline>In nonummy odio non metus</headline>
                       <text><![CDATA[Sed enim dolor, molestie aliquet, faucibus vel, elementum posuere, felis. Sed faucibus, lacus eu interdum feugiat, wisi leo vulputate lectus, ut ullamcorper nisl nisl placerat tellus. Sed justo libero, blandit nec, eleifend vitae, adipiscing vel, orci. Sed libero tortor, luctus in, molestie id, ultrices at, nibh. Sed lorem tellus, rutrum sit amet, tristique eget, eleifend blandit, wisi. 
@@ -109,7 +109,7 @@ Donec odio nunc, fringilla id, adipiscing eu, interdum sed, odio. Donec pede nun
                   <properties>
                     <title>Jugend-section</title>
                   </properties>
-                  <node type="TYPO3.TYPO3:Text" nodeName="Nulla eget massa ut ante" locale="en_EN">
+                  <node type="TYPO3.TYPO3:Text" nodeName="Nullaegetmassautante" locale="en_EN">
                     <properties>
                       <headline>Nulla eget massa ut ante</headline>
                       <text><![CDATA[Pellentesque lobortis, arcu sit amet placerat tincidunt, mauris ligula luctus justo, non vehicula neque mi eget turpis. 
@@ -126,13 +126,13 @@ Egestas quis, volutpat ac, semper eget, orci. Pellentesque mollis, nibh vitae cu
                 </node>
               </node>
               <node identifier="" type="TYPO3.TYPO3:Page" nodeName="--------------------" locale="en_EN"/>
-              <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Artikel - Einzelansicht" locale="en_EN"/>
+              <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Artikel-Einzelansicht" locale="en_EN"/>
             </node>
           </node>
           <node identifier="" type="TYPO3.TYPO3:Page" nodeName="DatensÃ¤tze" locale="en_EN">
-            <node identifier="" type="TYPO3.TYPO3:Page" nodeName="" locale="en_EN">
+            <node identifier="" type="TYPO3.TYPO3:Page" nodeName="8f97815bde4cb08663e6" locale="en_EN">
               <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Artikel" locale="en_EN"/>
-              <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Seitenbausteine (TV!)" locale="en_EN"/>
+              <node identifier="" type="TYPO3.TYPO3:Page" nodeName="Seitenbausteine-TV--" locale="en_EN"/>
             </node>
           </node>
         </node>

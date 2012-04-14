@@ -6,16 +6,37 @@ class Tx_T3tt_Domain_Model_Request_DataTransformationRequest {
    
    protected $_params = array();
    
-   public function insertParams(Array $params) {
+   public function insertParams(array $params) {
+       $this->_params['markerData'] = isset($params['markerData']) ? $params['markerData'] : array();
        $this->_params['inputDataFile'] = isset($params['inputDataFile']) ? $params['inputDataFile'] : 'Input.xml';                        
        $this->_params['phpHooksFile'] = isset($params['phpHooksFile']) ? $params['phpHooksFile'] : 'master.php';                        
        $this->_params['usedPhpHooks'] = isset($params['usedPhpHooks']) ? $params['usedPhpHooks'] : array();
        $this->_params['ctypeConfiguration'] = isset($params['ctypeConfiguration']) ? $params['ctypeConfiguration'] : array();        
        $this->_params['xsltProcessor'] = isset($params['xsltProcessor']) ? $params['xsltProcessor'] : 'PhpXsltProcessor';        
        $this->_params['xsltBaseStylesheet'] = isset($params['xsltBaseStylesheet']) ? $params['xsltBaseStylesheet'] : 'master.xsl';        
+       $this->_params['EMCONF'] = isset($params['EMCONF']) ? (array)$params['EMCONF'] : array();        
        $this->_paramsInserted = TRUE;
 
        return self;
+   }
+   
+   public function getEmConf() {
+       if (! $this->_paramsInserted) {
+           throw new Tx_T3tt_Domain_Model_Exception_NoParamsException("Use insertParams() before fetching the tables.");
+       }
+       return (array) $this->_params['EMCONF'];
+   }
+   
+   public function getMarkerData() {
+       if (! $this->_paramsInserted) {
+           throw new Tx_T3tt_Domain_Model_Exception_NoParamsException("Use insertParams() before fetching the Marker Data.");
+       }
+       
+       $this->_params['markers']['###SITE_NAME###'] = 'myFancyTypo3Page';
+       $this->_params['markers']['###PACKAGE_KEY###'] = 'TYPO3.PhoenixDemoTypo3Org';
+       
+       
+       return (array) $this->_params['markers'];
    }
     
     public function getInputDatafile() {

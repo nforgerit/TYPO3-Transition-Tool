@@ -1,4 +1,15 @@
-# cat=CATEGORY/SUBCATEGORY/SORT; type=VAR_TYPE; label=HEADER:DESCRIPTION
-2	var = DEFAULT
+
+# # cat=BASIC; type=string; label=Export:Transformation Input Directory
+# Transformation_Input_Directory = EXT:Resources/Private/Data/
+# 
+# # cat=BASIC; type=string; label=Export:Transformation Input Filename
+# Transformation_Input_Filename = Input.xml
+# 
+# # cat=BASIC; type=string; label=Transformation:Transformation Output Directory
+# Transformation_Output_Directory = fileadmin/t3tt/
+# 
+# # cat=BASIC; type=string; label=Transformation:Transformation Output Filename
+# Transformation_Output_Filename = Sites.xml
+
 
 // see @http://mediavrog.net/blog/2007/05/28/typo3/extensions/backend-be-extension-konfiguration-von-konstanten-direkt-nach-installation-moglich-machen/

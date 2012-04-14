@@ -23,7 +23,7 @@ class Tx_T3tt_Domain_Model_Data_Transformator {
         return $this;
     }
      
-    public function exec() {
+    public function exec() {        
         if (! $this->_requestInserted) {
             throw new Tx_T3tt_Domain_Model_Exception_NoParamsException("Missing the transformation request. You need to inject it via setRequest().");
         }
@@ -56,6 +56,7 @@ class Tx_T3tt_Domain_Model_Data_Transformator {
         $this->fetchInitialData();
         $this->setXsltProcessor();
         $this->fetchXsltStylesheet();
+        $this->substituteMarkersWithValues();
         $this->fetchPhpHooks();
     }
     
@@ -114,11 +115,10 @@ class Tx_T3tt_Domain_Model_Data_Transformator {
 		}                               
 		
 		foreach ($this->_phpHookAggregation[$category] as $func_name => $func) {
-			$output = call_user_func($func, $lines);
+			$output = call_user_func($func, &$lines);
 		}                    
 		
-		if (! $output)
-			return;
+        if (! $output) return;
 		                                   
 		if (is_array($output)) {
 		    // TODO: \n may be critical concerning system independency, see how F3 handles that (some chr() stuff)
@@ -144,6 +144,14 @@ class Tx_T3tt_Domain_Model_Data_Transformator {
 		    ->setStylesheet($stylesheetDomObj)
             ->setInputData($dataDomObj)
             ->render();
+    }
+    
+    private function substituteMarkersWithValues() {
+        $markerArray = $this->_transformationRequest->getMarkerData();
+        foreach ($markerArray as $marker => $value) {
+            $marker = "<!-- {$marker} -->";
+            $this->_xsltStylesheet = str_replace($marker, $value, $this->_xsltStylesheet);            
+        }
     }
     
     

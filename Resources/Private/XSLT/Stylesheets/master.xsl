@@ -4,7 +4,7 @@
 <xsl:output 
     method="xml" 
 	version="1.0" 
-	encoding="UTF-8" 
+	encoding="ISO-8859-1" 
 	omit-xml-declaration="no" 
 	indent="yes"
 	cdata-section-elements="source text"

@@ -10,9 +10,21 @@ class Tx_T3tt_Domain_Model_Request_DataExportRequest {
         $this->_params['dataFileName'] = isset($params['dataFileName']) ? $params['dataFileName'] : 'Input.xml';                        
         $this->_params['initNode'] = (! isset($params['initNode']) || $params['initNode'] < 0) ? 0 : intval($params['initNode']);
         $this->_params['involvedTables'] = isset($params['involvedTables']) ? (array)$params['involvedTables'] : array('tt_content','pages');        
+        $this->_params['EMCONF'] = isset($params['EMCONF']) ? (array)$params['EMCONF'] : array();        
         $this->_paramsInserted = TRUE;
 
         return self;
+    }
+    
+    public function getEmConf(string $key) {
+        if (! $this->_paramsInserted) {
+            throw new Tx_T3tt_Domain_Model_Exception_NoParamsException("Use insertParams() before fetching the tables.");
+        }
+        
+        if (! isset($this->_params['EMCONF'][$key]) || strlen($this->_params['EMCONF']) === 0 ) { 
+            throw new Tx_T3tt_Domain_Model_Exception_NoParamsException("Expected value of key `".$key."' does not exist.");
+        }
+        return (string) $this->_params['EMCONF'][$key];
     }
     
     public function getTables() {

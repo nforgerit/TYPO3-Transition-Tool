@@ -45,6 +45,20 @@ return array(
 		},*/
 	),
 	"post"	=> array(
+        "fillEmptyNodeNames" => function($lines) {
+            foreach ($lines as $i => $l) {
+
+                if (preg_match('/nodeName=\"\"/U', $l)) {
+                    $lines[$i] = preg_replace(  
+                        '/nodeName=\"\"/U', 
+                        'nodeName="'.substr(hash('sha256', (string)mt_rand()), 0, 20).'"',
+                        $l
+                    );
+                }
+            }
+            
+            return $lines;
+        },
 	    /**
 	     * Because nodeName values mustn't contain the symbols *, #, @ as well
 	     * as ' ' (any whitespaces), replace any occurrences with a dash (-).
@@ -65,7 +79,7 @@ return array(
                     );
                     
                         // replace illegal symbols with a dash
-                    $filteredSubStr = str_replace(array('#','@','*',',','.','!'), '-', $filteredSubStr);
+                    $filteredSubStr = str_replace(array('#','@','*',',','.','!','(', ')'), '-', $filteredSubStr);
                         
                         // replace original nodeName content with filtered content
                     $l = preg_replace(
@@ -74,28 +88,16 @@ return array(
                         $l
                     );                
                 }
-                                                            
+                                                                            
                 $lines[$i] = $l;
             }
-            echo "-- ".htmlspecialchars($returnArr)." "."\n";
-	   	    
             
             return $lines;
 		},
-		"fillEmptyNodeNames" => function($lines) {
-		    foreach ($lines as $i => $l) {
-		        $lines[$i] = preg_replace(
-		            '/nodeName=\"\"/U', 
-		            'nodeName="'.substr(hash('sha256', (string)mt_rand()), 0, 20).'"',
-		            $l
-		        );
-		    }
-		    
-		    return $lines;
-		},
-		"killRemainingMarkers" => function($lines) {
-		    
-		},
+
+		// "killRemainingMarkers" => function($lines) {
+		//            
+		//        },
 	),
 );
 

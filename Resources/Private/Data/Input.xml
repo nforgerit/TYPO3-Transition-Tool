@@ -121,7 +121,7 @@
 				<rec index="3" type="array">
 					<uid>3</uid>
 					<pid>25</pid>
-					<title>Datensätze</title>
+					<title>DatensÃ¤tze</title>
 					<size>2410</size>
 					<relations index="rels" type="array">
 					</relations>
@@ -772,7 +772,7 @@
 				<field index="crdate">1318903257</field>
 				<field index="cruser_id">1</field>
 				<field index="hidden">0</field>
-				<field index="title">Datensätze</field>
+				<field index="title">DatensÃ¤tze</field>
 				<field index="doktype">254</field>
 				<field index="TSconfig"></field>
 				<field index="storage_pid">0</field>
